@@ -1,0 +1,10 @@
+{
+    "name": "vulkan-validation-layers",
+    "version": "1.0.0",
+    "description": "Vulkan Validation Layers",
+    "homepage": "https://github.com/GabeRundlett/Vulkan-ValidationLayers",
+    "dependencies": [
+        "robin-hood-hashing",
+        "spirv-tools"
+    ]
+}

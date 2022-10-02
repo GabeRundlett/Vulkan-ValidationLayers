@@ -1,0 +1,116 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "defaults",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+            "generator": "Ninja",
+            "cacheVariables": {
+            }
+        },
+        {
+            "name": "defaults-windows",
+            "hidden": true,
+            "inherits": [
+                "defaults"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "cacheVariables": {
+            }
+        },
+        {
+            "name": "defaults-linux",
+            "hidden": true,
+            "inherits": [
+                "defaults"
+            ],
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            },
+            "cacheVariables": {
+            }
+        },
+        {
+            "name": "defaults-release",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "defaults-relwithdebinfo",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+            }
+        },
+        {
+            "name": "defaults-debug",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        },
+        {
+            "name": "release-windows",
+            "displayName": "release",
+            "inherits": [
+                "defaults-windows",
+                "defaults-release"
+            ]
+        },
+        {
+            "name": "relwithdebinfo-windows",
+            "displayName": "relwithdebinfo",
+            "inherits": [
+                "defaults-windows",
+                "defaults-relwithdebinfo"
+            ]
+        },
+        {
+            "name": "debug-windows",
+            "displayName": "debug",
+            "inherits": [
+                "defaults-windows",
+                "defaults-debug"
+            ]
+        },
+        {
+            "name": "release-linux",
+            "displayName": "release",
+            "inherits": [
+                "defaults-linux",
+                "defaults-release"
+            ]
+        },
+        {
+            "name": "relwithdebinfo-linux",
+            "displayName": "relwithdebinfo",
+            "inherits": [
+                "defaults-linux",
+                "defaults-relwithdebinfo"
+            ]
+        },
+        {
+            "name": "debug-linux",
+            "displayName": "debug",
+            "inherits": [
+                "defaults-linux",
+                "defaults-debug"
+            ]
+        }
+    ]
+}
