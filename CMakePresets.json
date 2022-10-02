@@ -27,6 +27,7 @@
                 "rhs": "Windows"
             },
             "cacheVariables": {
+                "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/cmake/toolchains/clang-x86_64-windows-msvc.cmake"
             }
         },
         {
@@ -41,6 +42,7 @@
                 "rhs": "Linux"
             },
             "cacheVariables": {
+                "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/cmake/toolchains/gnu-x86_64-linux-gnu.cmake"
             }
         },
         {
